@@ -67,7 +67,7 @@ function antonine_author_meta() {
 
 	global $post;
 	?><div>
-		<h6 class='meta_label'><?PHP echo __('Author', 'antonine'); ?></h6><span property="author" typeof="Person"><a href="<?PHP echo get_author_posts_url($post->post_author); ?>"><?PHP echo get_the_author_meta("display_name"); ?></a></span>
+		<h6 class='meta_label'><?PHP echo __('Author', 'antonine'); ?></h6><span property="author" typeof="Person"><a property="url" href="<?PHP echo get_author_posts_url($post->post_author); ?>"><span property="name"><?PHP echo get_the_author_meta("display_name"); ?></span></a></span>
 	</div>
 	<?PHP
 	
