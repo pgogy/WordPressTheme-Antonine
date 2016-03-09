@@ -1,6 +1,6 @@
 <?PHP
 	$post = get_query_var('post');
-	echo $post->post_content;
+	echo apply_filters("the_content", $post->post_content);
 ?>
 	<footer class="entry-footer">
 		<?php antonine_entry_meta(); ?>
