@@ -1,12 +1,16 @@
 function antonine_poll(){
+
+	last_read = Cookies.get("user_page_last_read_cookie");
+	
 	var data = {
 		'action': 'antonine_update_poll',
-		'last_read' : Cookies.get("user_page_last_read_cookie"),
+		'last_read' : last_read,
 		'nonce': antonine_update.nonce
 	};
-	
+
 	jQuery.post(antonine_update.ajaxURL, data, function(response) {
 			postData = JSON.parse(response);
+			console.log(postData);
 			if(postData.updates=="true"){
 				antonine_toggle();
 			}else{
@@ -64,11 +68,13 @@ jQuery(document).ready( function(){
 						}
 					}
 				}
+
+				last_read = Cookies.get("user_page_last_read_cookie");
 				
 				var data = {
 							'action': 'antonine_update',
 							'read' : read,
-							'last_read' : Cookies.get("user_page_last_read_cookie"),
+							'last_read' : last_read,
 							'nonce': antonine_update.nonce
 						};
 						
