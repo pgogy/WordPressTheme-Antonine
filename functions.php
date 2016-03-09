@@ -301,15 +301,10 @@ function antonine_extra_style(){
 			color:  <?PHP echo get_theme_mod("site_title_colour"); ?>;
 		}
 		
-		.home article .entry-header,
-		.search article .entry-header,
-		.archive article .entry-header{
+		.home article .content-holder,
+		.search article .content-holder,
+		.archive article .content-holder{
 			border-right: 1px solid  <?PHP echo get_theme_mod("border_colour"); ?>;
-		}
-		
-		.home article .read-more-holder, 
-		.search article .read-more-holder, 
-		.archive article .read-more-holder{
 			border-left: 1px solid  <?PHP echo get_theme_mod("border_colour"); ?>;
 		}
 		
