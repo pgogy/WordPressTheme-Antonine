@@ -1,7 +1,6 @@
 <div id="widget-area" class="widget-area" role="complementary">
 	<?php
 		if(is_active_sidebar("sidebar-one")){
-			echo "fuck off";
 			dynamic_sidebar("sidebar-one"); 
 		}else{
 			if ( current_user_can( 'manage_options' ) ) {
