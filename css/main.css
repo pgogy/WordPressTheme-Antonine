@@ -316,7 +316,6 @@ div#previewHolderContent{
 	float:left; 
 	text-align:center;
 	height: 100%;
-    border-right: 1px solid #000;
 }
 
 .home article .content-holder,
@@ -417,10 +416,9 @@ div#previewHolderContent{
 .home article .read-more-holder,
 .search article .read-more-holder,
 .archive article .read-more-holder{
-	border-left:1px solid #000;
-    height: 100%;
-    display: inline-block;
-    width: 20%;
+	height: 100%;
+    	display: inline-block;
+    	width: 20%;
 	text-align:center;
 	padding: 5px;
 }
