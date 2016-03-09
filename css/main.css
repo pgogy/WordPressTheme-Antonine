@@ -1059,6 +1059,25 @@ html body .sp-replacer{
 .single .chat p{
 	display: inline-block;
 }	
-				
 		
+#infoBar h1{
+	display: inline-block;
+	width: 10%;
+}		
+
+#infoform p{
+	display: inline-block;
+	width:87%;
+	margin-left: 10px;
+	vertical-align: top;
+}		
+
+#infoform{
+	width: 85%;
+    	height: 70%;
+    	overflow-y: scroll;
+    	top: 10%;
+    	position: relative;
+}	
+	
 .sticky{}
