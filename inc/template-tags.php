@@ -20,7 +20,7 @@ function antonine_get_categories_links($id){
 	$cats = antonine_get_categories($id);
 	
 	foreach($cats as $cat){
-		$html[] = "<span property='subject'><a property='name' href='" . $cat['link'] ."'>" . $cat['name'] . "</a></span>";
+		$html[] = "<span property='about' typeof='Thing'><a property='url' href='" . $cat['link'] ."'><span property='name'>" . $cat['name'] . "</span></a></span>";
 	}
 	
 	if(count($html)==0){
