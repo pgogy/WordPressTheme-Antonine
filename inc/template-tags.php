@@ -20,11 +20,7 @@ function antonine_get_categories_links($id){
 	$cats = antonine_get_categories($id);
 	
 	foreach($cats as $cat){
-		if($cat['name']!="Uncategorized"){
-			$html[] = "<span property='about' typeof='Thing'><a property='url' href='" . $cat['link'] ."'><span property='name'>" . $cat['name'] . "</span></a></span>";
-		}else{
-			$html[] = "<span><a href='" . $cat['link'] ."'>" . $cat['name'] . "</a></span>";
-		}
+		$html[] = "<span property='about' typeof='Thing'><a property='url' href='" . $cat['link'] ."'><span property='name'>" . $cat['name'] . "</span></a></span>";
 	}
 	
 	if(count($html)==0){

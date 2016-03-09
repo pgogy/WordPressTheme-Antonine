@@ -7,9 +7,7 @@
 			?><meta name = "DC.Title" content = "<?PHP echo $post->post_title; ?><?PHP
 			?><meta name = "DC.Date" content = "<?PHP echo $post->post_date; ?><?PHP
 			foreach($cats as $subject){
-				if($subject['name']!="Uncategorized"){
-					?><meta name = "DC.Subject" content = "<?PHP echo $subject['name']; ?>"><?PHP
-				}
+				?><meta name = "DC.Subject" content = "<?PHP echo $subject['name']; ?>"><?PHP
 			}
 		}
 	?>
