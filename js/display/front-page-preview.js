@@ -3,6 +3,8 @@ jQuery(document).ready( function(){
 	jQuery("#previewClose")
 		.on("click", function(){
 				antonine_aria("false");
+				jQuery("#previewHolder")
+					.css("z-index",10000);
 				jQuery("#previewClose")
 					.fadeOut(100);
 				jQuery("#previewHolder")
@@ -60,10 +62,12 @@ function antonine_preview_link(){
 													500
 												);
 								
+									jQuery("#previewHolder")
+										.css("z-index",10000);
 								
 									jQuery("#previewHolder")
 										.animate(
-													{opacity:"1",left:"1%",top:"10%",height:"+" + (parseInt(jQuery(window).height()) - 200) + "px",width:"+98%"},
+													{opacity:"1",left:"12%",top:"10%",height:"+" + (parseInt(jQuery(window).height()) - 200) + "px",width:"+76%"},
 													500,
 													function(){														
 														jQuery("#previewTitle")
