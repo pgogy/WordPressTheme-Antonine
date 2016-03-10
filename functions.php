@@ -254,8 +254,8 @@ function antonine_extra_style(){
 		}
 		
 		.single article,
-		.linkprevious,
-		.linknext,
+		.links .linkprevious,
+		.links .linknext,
 		.single .links,
 		#gradient,
 		.page{

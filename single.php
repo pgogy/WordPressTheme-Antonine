@@ -14,8 +14,15 @@
 			
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();
-			endif;
+
+				?><div class="linkslower">
+					<div class="linkprevious"><?PHP previous_post_link() ?></div><div class="linknext"><?PHP next_post_link() ?></div>
+					<div class="linkhome"><a href="<?PHP site_url() ?>"><?PHP echo get_bloginfo('name'); ?> <?PHP echo __("home", "antonine"); ?></a></div>
+				</div><?PHP
 			
+			endif;
+							
+
 		endwhile;
 		?>
 		</main><!-- .site-main -->

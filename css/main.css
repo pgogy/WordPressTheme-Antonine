@@ -981,6 +981,12 @@ h6{
 	text-align:right;
 }
 
+.linkhome{
+	width:96%;
+	text-align:center;
+	margin: 2%;
+}
+
 .paginationNumbers{
 	text-align:center;
 }
