@@ -252,7 +252,7 @@ nav#primary-navigation{
 }
 
 div#previewHolder{
-	z-index:10000; 
+	z-index:-1; 
 	position:fixed; 
 	top:50%; 
 	left:50%; 
