@@ -5,4 +5,3 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<link href='//fonts.googleapis.com/css?family=Dosis:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300&subset=latin,cyrillic-ext,latin-ext,cyrillic,greek-ext,vietnamese' rel='stylesheet' type='text/css'>
 	<link href='//fonts.googleapis.com/css?family=Josefin+Sans:400' rel='stylesheet' type='text/css'>
-	<script>(function(){document.documentElement.className='js'})();</script>
