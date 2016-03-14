@@ -9,7 +9,7 @@
 	</header>
 	
 	<div class="entry-content">
-		<p><?php echo __("Posted on") . " " . $post->post_date; ?></p>
+		<p><?php echo __("Posted on", "antonine") . " " . $post->post_date; ?></p>
 		<br />
 		<?php
 			the_content( sprintf(
