@@ -1,8 +1,9 @@
+<script>(function(){document.documentElement.className='js'})();</script>
 <?php
 	if(get_theme_mod("info")=="on"){
 ?>
 <div id="navMenuHolder" class="holder">
-	<p id='menuClose' class="holderclose"><span><i class="fa fa-times"></i></span></p>
+	<p id='menuClose' class="holderclose"><span><span class="fa fa-times"></span></span></p>
 	<nav id="primary-navigation" class="site-navigation nav-menu-standard" role="navigation">
 		<?PHP
 
@@ -45,7 +46,7 @@
 		if(get_theme_mod("filters")=="on"){
 ?>
 <div id="filterHolder" class="holder">
-	<p id='filterClose' class="holderclose"><span><i class="fa fa-times"></i></span></p>
+	<p id='filterClose' class="holderclose"><span><span class="fa fa-times"></span></span></p>
 	<div id="filterBar" class="holderbar">
 		<?PHP
 			get_template_part('parts/menustrip/filter-form/standard');
@@ -132,9 +133,8 @@
 		<article class="home-page content_preview">
 			<header class="entry-header">
 				<div class="title-holder">
-					<p id="previewClose"><span><i class="fa fa-times"></i></span></p>
-					<h2 id="previewTitle" class="entry-title">
-					</h2>
+					<p id="previewClose"><span><span class="fa fa-times"></span></span></p>
+					<h1 id="previewTitle" class="entry-title"><?PHP echo __("Preview title will appear here", "antonine"); ?></h1>
 				</div>
 				<div class="content-holder">
 					<div id="previewContent" class="entry-content-index">
