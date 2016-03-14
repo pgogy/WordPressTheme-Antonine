@@ -1,4 +1,4 @@
-<p id="updatesClose" class="holderclose"><span><i class="fa fa-times"></i></span></p>
+<p id="updatesClose" class="holderclose"><span><span class="fa fa-times"></span></span></p>
 <h2><?PHP echo __("Updates", 'antonine'); ?></h2>
 <div id="updatesSpace">
 	<div class="newContent">
