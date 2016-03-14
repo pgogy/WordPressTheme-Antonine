@@ -197,7 +197,7 @@ p#infoClose{
 p.holderclose span,
 p#previewClose span{
 	position:relative;
-	top:4px;
+	top:2px;
 }
 
 div#filterBar{
@@ -583,6 +583,9 @@ footer.page-footer h1.pagination span.more{
 #accessform form,
 #searchform form{
 	width: 96%;
+}
+
+#searchorm form{
 	margin: 3% 2%;
 	text-align: center;
 }
@@ -694,6 +697,10 @@ button{
 	padding: 20px;
 }
 
+.single p.entry-title{
+	font-size: 40px;
+}
+
 .single .entry-content{
 	margin: 20px 0px;
 }
@@ -704,6 +711,7 @@ button{
 
 img.avatar{
 	float:left;
+	margin: 0% 2% 1% 0%;
 }
 
 .fn{
@@ -752,25 +760,9 @@ strong{
 .single footer{
 	margin: 2%;
 }
-	
-#sidebar-right{
-	float: right;
-    width: 29%;
-    margin-left: 1%;
-    display: inline-block;
-    vertical-align: top;
-}
 
-#sidebar-bottom aside{
-	width: 32.4%;
-	margin-left: 1.2%;
-	float: left;
-	display: inline-block;
-	vertical-align: top;
-}
-
-#sidebar-bottom aside:first-child{
-	margin-left: 0%;
+.single footer.comment-meta{
+	margin: 0%;
 }
 
 #comments{
@@ -1066,14 +1058,13 @@ html body .sp-replacer{
 		
 #infoBar h1{
 	display: inline-block;
-	width: 10%;
+	width: 40%;
 }		
 
 #infoform p{
 	display: inline-block;
-	width:87%;
+	width:57%;
 	margin-left: 10px;
-	vertical-align: top;
 }		
 
 #infoform{
@@ -1082,6 +1073,17 @@ html body .sp-replacer{
     	overflow-y: scroll;
     	top: 10%;
     	position: relative;
+}
+
+#basic_accessibility_widget_options label,
+#basic_accessibility_widget_options input{
+	display: block;
+	text-align: left;
+	margin: 0.5% 0%;
 }	
+
+#basic_accessibility_widget_options div#access-font-size{
+	margin: 3% 0%;
+}
 	
 .sticky{}
