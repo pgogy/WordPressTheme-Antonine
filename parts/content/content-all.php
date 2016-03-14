@@ -1,8 +1,8 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class("home-page"); ?> resource="?<?php the_ID() ; ?>#id" vocab="http://schema.org/" typeof="Blog">
 	<header class="entry-header title-holder">
-			<h2 class="entry-title home-align-title">
+		<p class="entry-title home-align-title">
 			<a href="<?PHP echo get_permalink(); ?>" rel="bookmark"><?PHP echo the_title(); ?></a>
-		</h2>
+		</p>
 	</header>	
 	<div class="content-holder">
 		<div class="entry-content-index home-align">
