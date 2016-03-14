@@ -4,7 +4,7 @@
 			the_post_thumbnail();
 		?></div>
 		<?php
-			the_title( '<h1 class="entry-title">', '</h1>' );
+			the_title( '<p class="entry-title">', '</p>' );
 		?>
 	</header>
 
