@@ -45,9 +45,9 @@
 				$post = get_post($post_id);
 				
 				$email = "<p>" . __("Hello", 'antonine') . ",</p><p>" . __("There is new content on", "antonine") . " " . get_bloginfo('name') . "</p>.";
-				$email .= "<p>" . __("Here is a link the new post") . " <a href='" . get_the_permalink($post_id) . "'>" . $post->post_title . "</a></p>.";
+				$email .= "<p>" . __("Here is a link to the new post", "antonine") . " <a href='" . get_the_permalink($post_id) . "'>" . $post->post_title . "</a></p>.";
 				$email .= "<p><a href='" . $unsubscribe . "'>" . __("Unsubscribe", 'antonine') . "</a></p>"; 
-				$email .= "<p>" . __("Thanks") . "</p>"; 
+				$email .= "<p>" . __("Thanks", "antonine") . "</p>"; 
 				
 				wp_mail($result->email_address, "[" . get_bloginfo('name') . "] : " .  __("New Post", 'antonine') . " " . $post->post_title, $email);
 				
