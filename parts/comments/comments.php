@@ -1,25 +1,81 @@
 <div id="comments" class="comments-area">
 	<?php 
-		$post = get_query_var('post');
-		$comments = get_comments(array("post_id" => $post->ID));
-	?>
-		<h2 class="comments-title">
-			<?php
-				printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'antonine' ),
-					number_format_i18n( get_comments_number() ), get_the_title() );
-			?>
-		</h2>
-		<ol class="comment-list">
-			<?php
-				wp_list_comments( array(
-					'style'       => 'ol',
-					'short_ping'  => true,
-					'avatar_size' => 56,
-					)
-					,$comments
-				);
-			?>
+		global $wp_query;
+		$offset = $wp_query->query['cpage'] * get_option('comments_per_page');
+		if(get_option('default_comments_page')=="newest"){
+			$order = "ASC";
+		}else{
+			$order = "DESC";
+		}
+
+		$args = array(
+			'status' => 'approve',
+			'number' => get_option('comments_per_page'),
+			'post_id' => get_the_ID(),
+			'offset' => $offset,
+			'order' => $order
+		);
+
+		$comments = get_comments($args);
+		?><ol class="comment-list"><?PHP
+		foreach($comments as $comment){
+			?>	
+			<li id="comment-<?PHP echo $comment->comment_ID; ?>" class="comment even thread-even depth-1" font-size="24px">
+				<article id="div-comment-<?PHP echo $comment->comment_ID; ?>" class="comment-body">
+					<footer class="comment-meta">
+						<div class="comment-author vcard">
+							<?PHP 
+								$size = get_avatar_data($comment->comment_author_email);
+								echo get_avatar($comment->comment_author_email, $size['size']); 
+							?>
+							<span class="fn">
+								<a href="<?PHP echo $comment->comment_author_url; ?>" rel="external nofollow" class="url"><?PHP echo $comment->comment_author; ?></a>
+							</span> 
+							<span class="says"><?PHP echo __("comments", "antonine"); ?>:</span>	
+						</div><!-- .comment-author -->
+						<div class="comment-metadata">
+							<a href="<?PHP echo get_permalink(get_the_id()); ?>?cpage=<?PHP echo $wp_query->query['cpage']; ?>#comment-<?PHP echo $comment->comment_ID; ?>" >
+								<time datetime="<?PHP echo str_replace($comment->comment_date_gmt," ","T") ?>+00:00">
+									<?PHP echo comment_date(); ?>						
+								</time>
+							</a>
+						</div><!-- .comment-metadata -->
+					</footer><!-- .comment-meta -->
+					<div class="comment-content">
+						<p><?PHP echo $comment->comment_content; ?></p>
+					</div><!-- .comment-content -->
+					<div class="reply">
+						<a rel="nofollow" class="comment-reply-link" href="<?PHP 
+
+									$link = get_permalink(get_the_id()); 
+									if(strpos($link, "?")!==FALSE){
+										$char = "&";
+									}else{
+										$char = "?";
+									}
+
+									echo $link;
+
+									?><?PHP echo $char; ?>cpage=<?PHP echo $wp_query->query['cpage']; ?>&replytocom=<?PHP echo $comment->comment_ID; ?>#respond" aria-label="<?PHP echo __("Reply to", "antonine"); ?> <?PHP $comment->comment_author; ?>">
+							<?PHP echo __("Reply", "antonine"); ?>
+						</a>
+					</div>
+				</article><!-- .comment-body -->
+			</li>	
+			<?PHP
+		}
+
+		?>
 		</ol><!-- .comment-list -->
+	<?PHP
+		echo paginate_comments_links( 
+					array(
+							"before_page_number" => __("Comment Page", "antonine") . " ",
+							"prev_text" => __("Previous comment page", "antonine"),
+							"next_text" => __("Next comment page", "antonine"),
+						)
+					);
+		?>
 	<?PHP
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
@@ -27,5 +83,21 @@
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'antonine' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
+	<?php 
+		ob_start();
+		comment_form(
+				array(
+					"cancel_reply_before" => "<span>",
+					"cancel_reply_after" => "</span>"
+					)
+			    	);
+		$comment_form = ob_get_contents(); 
+		ob_end_clean();
+		$comment_form = str_replace('type="text"', 'type="text" maxlength="200"', $comment_form);
+		$comment_form = str_replace('type="url"', 'type="url" maxlength="200"', $comment_form);
+		$comment_form = str_replace('type="email"', 'type="email" maxlength="200"', $comment_form);
+		$comment_form = str_replace('<textarea ', '<textarea maxlength="20000000"', $comment_form);
+		$comment_form = str_replace("novalidate", "", $comment_form);
+		echo $comment_form;
+	?>
 </div><!-- .comments-area -->
