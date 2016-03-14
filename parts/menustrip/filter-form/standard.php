@@ -1,7 +1,8 @@
 <h2><?PHP echo __("Filter", 'antonine'); ?></h2>
+<form action="javascript:function(){return false;}">
 <?PHP
 	$categories = get_categories();
-	echo "<label for='antonine_category'>" . __("Choose a category") . "</label>";
+	echo "<label for='antonine_category'>" . __("Choose a category", "antonine") . "</label>";
 	echo "<select id='antonine_category'>";
 	echo "<option value='0'>" . __("All categories", 'antonine') . "</option>";
 	foreach($categories as $category){
@@ -9,7 +10,7 @@
 	}
 	echo "</select>";
 	$tags = get_tags();
-	echo "<label for='antonine_tag'>" . __("Choose a tag") . "</label>";
+	echo "<label for='antonine_tag'>" . __("Choose a tag", "antonine") . "</label>";
 	echo "<select id='antonine_tag'>";
 	echo "<option value='0'>" . __("All Tags", 'antonine') . "</option>";
 	foreach($tags as $tag){
@@ -41,7 +42,7 @@
 	}
 	
 	wp_reset_query();
-	echo "<label for='antonine_date'>" . __("Choose a date") . "</label>";
+	echo "<label for='antonine_date'>" . __("Choose a date", "antonine") . "</label>";
 	echo "<select id='antonine_date'>";
 	echo "<option value='0'>" . __("All dates", 'antonine') . "</option>";
 	foreach($dates as $date => $name){
@@ -51,13 +52,14 @@
 	
 	asort($authors);
 	
-	echo "<label for='antonine_author'>" . __("Choose an author") . "</label>";
+	echo "<label for='antonine_author'>" . __("Choose an author", "antonine") . "</label>";
 	echo "<select id='antonine_author'>";
 	echo "<option value='0'>" . __("All Authors", 'antonine') . "</option>";
 	foreach($authors as $id => $name){
 		echo "<option value='" . $id . "'>" . $name . "</option>";
 	}
 	echo "</select>";
-	echo "<label for='antonine_free_text'>" . __("Free text", 'antonine') . "</label><input type='text' id='antonine_free_text' />";
+	echo "<label for='antonine_free_text'>" . __("Free text", 'antonine') . "</label><input type='text' name='freetext' id='antonine_free_text' maxlength='100' />";
 	echo "<p><span id='antonine_posts_count'>" . $posts_count . " " . __("Matching Posts", 'antonine') . "</span> <button id='filterShowButton'>" . __("Show", "antonine") . "</button></p>";
 ?>
+</form>
