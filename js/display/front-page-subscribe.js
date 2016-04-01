@@ -11,7 +11,6 @@ jQuery(document).ready( function(){
 						};
 						
 				jQuery.post(antonine_subscribe.ajaxURL, data, function(response) {
-						console.log(response);
 						jQuery("#subscribeResponse")
 							.html(response);
 					}

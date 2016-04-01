@@ -10,7 +10,6 @@ function antonine_poll(){
 
 	jQuery.post(antonine_update.ajaxURL, data, function(response) {
 			postData = JSON.parse(response);
-			console.log(postData);
 			if(postData.updates=="true"){
 				antonine_toggle();
 			}else{

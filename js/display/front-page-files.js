@@ -22,7 +22,6 @@ jQuery(document).ready( function(){
 						};
 						
 				jQuery.post(antonine_files.ajaxURL, data, function(response) {
-						console.log(response);
 						jQuery("#filesSpace")
 							.html(response);
 					}

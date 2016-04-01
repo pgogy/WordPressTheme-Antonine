@@ -141,7 +141,6 @@
 	
 	api( 'pagination_link_colour', function( value ) {
 		value.bind( function( to ) {
-			console.log(to);
 			$( '.page-footer h1 a' ).css( "color", to );
 			$( '.page-footer h1 span' ).css( "color", to );
 		} );

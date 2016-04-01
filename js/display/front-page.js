@@ -1,5 +1,4 @@
 function antonine_menu_slide(items){
-	console.log(items);
 	if(items.length!=0){
 		item = items.shift();
 		jQuery(item)
@@ -13,7 +12,6 @@ function antonine_menu_slide(items){
 }
 
 function antonine_menu_slide_filter(items){
-	console.log(items);
 	if(items.length!=0){
 		item = items.shift();
 		jQuery(item)
