@@ -1,7 +1,7 @@
 <?PHP
 	$post = get_query_var('post');
 ?>
-<article id="post-<?php echo $post->ID; ?>" <?php post_class("home-page infinite_scroll"); ?>>
+<article id="post-<?php echo $post->ID; ?>" <?php post_class("home-page infinite_scroll"); ?> resource="?<?php echo $post->ID; ?>#id" vocab="http://schema.org/" typeof="Blog">
 	<header class="entry-header">
 		<h2 class="entry-title home-align-title">
 			<a href="?p=<?PHP echo $post->ID; ?>" rel="bookmark"><?PHP echo $post->post_title; ?></a>
