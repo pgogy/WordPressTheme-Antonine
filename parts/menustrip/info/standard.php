@@ -8,7 +8,12 @@
 	}
 	if(get_theme_mod("menu")=="on"){
 ?>
-<h1><span class="fa fa-bars"></span> = <?PHP echo __("Menu", "antonine"); ?></h1><p><?PHP echo __(" and shows this page", "antonine"); ?></p>
+<h1><span class="fa fa-bars"></span> = <?PHP echo __("Menu", "antonine"); ?></h1><p><?PHP echo __(" and shows a menu", "antonine"); ?></p>
+<?PHP
+	}
+	if(get_theme_mod("share")=="on"){
+?>
+<h1><span class="fa fa-share-alt"></span> = <?PHP echo __("Sharing", "antonine"); ?></h1><p><?PHP echo __(" and shows sharing options", "antonine"); ?></p>
 <?PHP
 	}
 	if(get_theme_mod("search")=="on"){
