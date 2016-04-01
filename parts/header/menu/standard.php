@@ -15,6 +15,11 @@
 		
 		}
 	}
+	if(get_theme_mod("share")=="on"){
+?>
+<a><div id="shareShow"><span class="fa fa-share-alt"></span></div></a>
+<?PHP
+	}
 	if(get_theme_mod("search")=="on"){
 ?>
 <a><div id="searchShow"><span class="fa fa-search"></span></div></a>
