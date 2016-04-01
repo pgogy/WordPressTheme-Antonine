@@ -20,6 +20,14 @@
 </div>
 <?PHP
 	}
+	if(get_theme_mod("share")=="on"){
+?>
+<?PHP
+	get_template_part('parts/menustrip/share/standard');
+?>
+</div>
+<?PHP
+	}
 	if(get_theme_mod("search")=="on"){
 ?>
 <div id="searchHolder" class="holder">
