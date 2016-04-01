@@ -12,6 +12,53 @@ function antonine_customize_register_modify( $wp_customize ) {
 	
 }
 
+function antonine_customize_register_social_media( $wp_customize ){
+$wp_customize->add_section( 'social_media' , array(
+    'title'       => __( 'Social Media Logo', 'antonine' ),
+    'priority'    => 30,
+    'description' => 'Upload a logo',
+) );
+
+$wp_customize->add_setting( 'sm_logo' );
+
+$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'sm_logo', array(
+    'label'    => __( 'Logo', 'antonine' ),
+    'section'  => 'social_media',
+    'settings' => 'sm_logo',
+) ) );
+}
+
+function antonine_customize_register_scroll_layout( $wp_customize ){
+
+	$wp_customize->add_section( 'scroll_layout' , array(
+		'title'      => __( 'Scroll', 'antonine' ),
+		'priority'   => 2,
+	) );
+	
+	$wp_customize->add_setting(
+		'scroll',
+		array(
+			'default' => 'on',
+			'sanitize_callback' => 'antonine_sanitize_radio',
+		)
+	);
+	 
+	$wp_customize->add_control(
+		'scroll',
+		array(
+			'type' => 'radio',
+			'label' => 'Show scroll to top',
+			'section' => 'scroll_layout',
+			'choices' => array(
+				'on' => 'On',
+				'off' => 'Off'		
+			),
+		)
+	);
+		
+}
+
+
 function antonine_customize_register_menu_layout( $wp_customize ){
 
 	$wp_customize->add_section( 'menu_layout' , array(
@@ -40,6 +87,26 @@ function antonine_customize_register_menu_layout( $wp_customize ){
 		)
 	);
 	
+	$wp_customize->add_setting(
+		'share',
+		array(
+			'default' => 'on',
+			'sanitize_callback' => 'antonine_sanitize_radio',
+		)
+	);
+	 
+	$wp_customize->add_control(
+		'share',
+		array(
+			'type' => 'radio',
+			'label' => 'Display social media share',
+			'section' => 'menu_layout',
+			'choices' => array(
+				'on' => 'On',
+				'off' => 'Off'		
+			),
+		)
+	);
 	
 	$wp_customize->add_setting(
 		'menu',
@@ -239,7 +306,6 @@ function antonine_customize_register_menu_layout( $wp_customize ){
 	
 	
 }
-
 
 function antonine_customize_register_page_layout( $wp_customize ){
 
@@ -784,9 +850,11 @@ function antonine_sanitize_file($value ) {
 
 function antonine_customize_register( $wp_customize ) {
 	antonine_customize_register_modify( $wp_customize );
+	antonine_customize_register_social_media( $wp_customize );
 	antonine_customize_register_add_site_colours( $wp_customize );
 	antonine_customize_register_page_layout( $wp_customize );
 	antonine_customize_register_menu_layout( $wp_customize );
+	antonine_customize_register_scroll_layout( $wp_customize );
 	antonine_customize_register_fav_icon( $wp_customize );
 }
 add_action( 'customize_register', 'antonine_customize_register' );
