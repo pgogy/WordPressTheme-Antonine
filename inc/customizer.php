@@ -13,19 +13,19 @@ function antonine_customize_register_modify( $wp_customize ) {
 }
 
 function antonine_customize_register_social_media( $wp_customize ){
-$wp_customize->add_section( 'social_media' , array(
-    'title'       => __( 'Social Media Logo', 'antonine' ),
-    'priority'    => 30,
-    'description' => 'Upload a logo',
-) );
+	$wp_customize->add_section( 'social_media' , array(
+		'title'       => __( 'Social Media Logo', 'antonine' ),
+		'priority'    => 30,
+		'description' => 'Upload a logo',
+	) );
 
-$wp_customize->add_setting( 'sm_logo' );
+	$wp_customize->add_setting( 'sm_logo' );
 
-$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'sm_logo', array(
-    'label'    => __( 'Logo', 'antonine' ),
-    'section'  => 'social_media',
-    'settings' => 'sm_logo',
-) ) );
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'sm_logo', array(
+		'label'    => __( 'Logo', 'antonine' ),
+		'section'  => 'social_media',
+		'settings' => 'sm_logo',
+	) ) );
 }
 
 function antonine_customize_register_scroll_layout( $wp_customize ){
@@ -313,27 +313,6 @@ function antonine_customize_register_page_layout( $wp_customize ){
 		'title'      => __( 'Page Options', 'antonine' ),
 		'priority'   => 2,
 	) );
-	
-	$wp_customize->add_setting(
-		'pagination',
-		array(
-			'default' => 'on',
-			'sanitize_callback' => 'antonine_sanitize_radio',
-		)
-	);
-	 
-	$wp_customize->add_control(
-		'pagination',
-		array(
-			'type' => 'radio',
-			'label' => 'Display pagination',
-			'section' => 'page_layout',
-			'choices' => array(
-				'on' => 'On',
-				'off' => 'Off'		
-			),
-		)
-	);
 	
 	$wp_customize->add_setting(
 		'author',
