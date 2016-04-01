@@ -1069,10 +1069,10 @@ html body .sp-replacer{
 
 #infoform{
 	width: 85%;
-    	height: 70%;
-    	overflow-y: scroll;
-    	top: 10%;
-    	position: relative;
+	height: 70%;
+	overflow-y: scroll;
+	top: 10%;
+	position: relative;
 }
 
 #basic_accessibility_widget_options label,
@@ -1084,6 +1084,26 @@ html body .sp-replacer{
 
 #basic_accessibility_widget_options div#access-font-size{
 	margin: 3% 0%;
+}
+
+#antoninetopscroll{
+	position: fixed;
+	top: 80%;
+	right: 5%;
+	display: none;
+}
+
+#shareForm{
+	display: none;
+}
+
+#shareButtons{
+	margin-left: 30px;
+	padding: 2px;
+}
+
+#shareButtons a{
+	padding: 0px 10px;
 }
 	
 .sticky{}
