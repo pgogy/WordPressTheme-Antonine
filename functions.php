@@ -88,7 +88,7 @@ function antonine_scripts() {
 
 	wp_deregister_script( 'jquery' );
 	wp_register_script( 'jquery', get_template_directory_uri() . '/js/jquery-1.12.1.min.js', false, NULL, true );
-    	wp_enqueue_script( 'jquery' );
+    wp_enqueue_script( 'jquery' );
 
 	wp_enqueue_script( 'jquery-ui-slider', array( 'jquery' ), "", true );
 	wp_enqueue_script( 'jquery-color', array( 'jquery' ), "", true );
@@ -165,7 +165,9 @@ function antonine_scripts() {
 		wp_enqueue_script( 'antonine-search-page-layout', get_template_directory_uri() . '/js/display/search-page-layout.js', array( 'jquery' ), "", true );
 	}
 	wp_enqueue_script( 'antonine-front-page-menu', get_template_directory_uri() . '/js/display/front-page-menu.js', array( 'jquery' ), "", true );
-	wp_enqueue_script( 'antonine-front-page-share', get_template_directory_uri() . '/js/display/front-page-share.js', array( 'jquery' ), "", true );
+	if(get_theme_mod("share")=="on"){
+		wp_enqueue_script( 'antonine-front-page-share', get_template_directory_uri() . '/js/display/front-page-share.js', array( 'jquery' ), "", true );
+	}
 	wp_enqueue_script( 'antonine-front-page-search', get_template_directory_uri() . '/js/display/front-page-search.js', array( 'jquery' ), "", true );
 	wp_enqueue_script( 'antonine-front-page-filter', get_template_directory_uri() . '/js/display/front-page-filter.js', array( 'jquery' ), "", true );
 	wp_enqueue_script( 'antonine-front-page-files', get_template_directory_uri() . '/js/display/front-page-files.js', array( 'jquery' ), "", true );
