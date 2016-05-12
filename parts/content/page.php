@@ -10,4 +10,7 @@
 		<?php the_content();?>
 		<?php endwhile; ?>
 	</div><!-- .entry-content -->
+	<footer class="entry-footer">
+		<?php antonine_licence(); ?>	
+	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

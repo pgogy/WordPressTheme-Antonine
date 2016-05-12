@@ -1,5 +1,21 @@
 <?php
 
+function antonine_licence(){
+	$license = get_theme_mod("license");
+	if($license!="none"){
+		switch(get_theme_mod("license")){
+			case 'zero' : $text = 'Creative Commons Zero'; $url = "https://creativecommons.org/publicdomain/zero/1.0/"; break;
+			case 'cc-by' : $text = 'Creative Commons CC-BY'; $url = "https://creativecommons.org/licenses/by/4.0/";	break;	
+			case 'cc-by-sa' : $text = 'Creative Commons CC-BY-SA'; $url = "https://creativecommons.org/licenses/by-sa/4.0/"; break;		
+			case 'cc-by-nd' : $text = 'Creative Commons CC-BY-ND'; $url = "https://creativecommons.org/licenses/by-nd/4.0/"; break;		
+			case 'cc-by-nc' : $text = 'Creative Commons CC-BY-NC'; $url = "https://creativecommons.org/licenses/by-nc/4.0/"; break;		
+			case 'cc-by-nc-sa' : $text = 'Creative Commons CC-BY-NC-SA'; $url = "https://creativecommons.org/licenses/by-nc-sa/4.0/"; break;		
+			case 'cc-by-nc-nd' : $text = 'Creative Commons CC-BY-NC-ND'; $url = "https://creativecommons.org/licenses/by-nc-nd/4.0/"; break;
+		}
+		?><p><a rel="license" href="<?PHP echo $url; ?>"><?PHP echo __("Content licensed as") . " " . $text; ?></a></p><?PHP
+	}
+}
+
 function antonine_get_categories($id){
 
 	$post_categories = wp_get_post_categories($id);

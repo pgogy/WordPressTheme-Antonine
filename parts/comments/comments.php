@@ -1,7 +1,11 @@
 <div id="comments" class="comments-area">
 	<?php 
 		global $wp_query;
-		$offset = $wp_query->query['cpage'] * get_option('comments_per_page');
+		if(isset($wp_query->query['cpage'])){
+			$offset = $wp_query->query['cpage'] * get_option('comments_per_page');
+		}else{
+			$offset = 0;
+		}
 		if(get_option('default_comments_page')=="newest"){
 			$order = "ASC";
 		}else{
@@ -29,7 +33,7 @@
 								echo get_avatar($comment->comment_author_email, $size['size']); 
 							?>
 							<span class="fn">
-								<a href="<?PHP echo $comment->comment_author_url; ?>" rel="external nofollow" class="url"><?PHP echo $comment->comment_author; ?></a>
+								<a href="<?PHP echo get_comment_author_link($comment->comment_ID); ?>" rel="external nofollow" class="url"><?PHP echo get_comment_author($comment->comment_ID); ?></a>
 							</span> 
 							<span class="says"><?PHP echo __("comments", "antonine"); ?>:</span>	
 						</div><!-- .comment-author -->
@@ -42,7 +46,7 @@
 						</div><!-- .comment-metadata -->
 					</footer><!-- .comment-meta -->
 					<div class="comment-content">
-						<p><?PHP echo $comment->comment_content; ?></p>
+						<p><?PHP echo get_comment_text( $comment->comment_ID ); ?></p>
 					</div><!-- .comment-content -->
 					<div class="reply">
 						<a rel="nofollow" class="comment-reply-link" href="<?PHP 
@@ -56,8 +60,8 @@
 
 									echo $link;
 
-									?><?PHP echo $char; ?>cpage=<?PHP echo $wp_query->query['cpage']; ?>&replytocom=<?PHP echo $comment->comment_ID; ?>#respond" aria-label="<?PHP echo __("Reply to", "antonine"); ?> <?PHP $comment->comment_author; ?>">
-							<?PHP echo __("Reply", "antonine"); ?>
+									?><?PHP echo $char; ?>cpage=<?PHP echo $wp_query->query['cpage']; ?>&replytocom=<?PHP echo $comment->comment_ID; ?>#respond" aria-label="<?PHP echo __("Reply to", "antonine"); ?> <?PHP get_comment_author($comment->comment_ID); ?>">
+							<?PHP echo __("Reply to", "antonine"); ?> <?PHP echo get_comment_author($comment->comment_ID); ?>
 						</a>
 					</div>
 				</article><!-- .comment-body -->

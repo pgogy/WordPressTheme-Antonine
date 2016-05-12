@@ -815,6 +815,42 @@ function antonine_customize_register_add_site_colours( $wp_customize ) {
 	
 }
 
+function antonine_customize_register_licence( $wp_customize ){
+
+	$wp_customize->add_section( 'cc_licence' , array(
+		'title'      => __( 'Creative Commons License', 'antonine' ),
+		'priority'   => 2,
+	) );
+	
+	$wp_customize->add_setting(
+		'license',
+		array(
+			'default' => 'on',
+			'sanitize_callback' => 'antonine_sanitize_radio',
+		)
+	);
+	 
+	$wp_customize->add_control(
+		'license',
+		array(
+			'type' => 'radio',
+			'label' => 'Which Creative Commons License?',
+			'section' => 'cc_licence',
+			'choices' => array(
+				'none' => 'No license',
+				'zero' => 'Creative Commons Zero',
+				'cc-by' => 'Creative Commons CC-BY',		
+				'cc-by-sa' => 'Creative Commons CC-BY-SA',		
+				'cc-by-nd' => 'Creative Commons CC-BY-ND',		
+				'cc-by-nc' => 'Creative Commons CC-BY-NC',		
+				'cc-by-nc-sa' => 'Creative Commons CC-BY-NC-SA',		
+				'cc-by-nc-nd' => 'Creative Commons CC-BY-NC-ND',		
+			),
+		)
+	);
+	
+}
+
 function antonine_sanitize_colour($value ) {
     return filter_var($value, FILTER_SANITIZE_STRING);
 }
@@ -830,6 +866,7 @@ function antonine_sanitize_file($value ) {
 function antonine_customize_register( $wp_customize ) {
 	antonine_customize_register_modify( $wp_customize );
 	antonine_customize_register_social_media( $wp_customize );
+	antonine_customize_register_licence( $wp_customize );
 	antonine_customize_register_add_site_colours( $wp_customize );
 	antonine_customize_register_page_layout( $wp_customize );
 	antonine_customize_register_menu_layout( $wp_customize );
