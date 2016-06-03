@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 function antonine_url_origin( $s, $use_forwarded_host = false )
 {
@@ -86,9 +86,9 @@ function antonine_scripts() {
 
 	if ( is_singular() ) wp_enqueue_script( "comment-reply" );
 
-	wp_deregister_script( 'jquery' );
+	/*wp_deregister_script( 'jquery' );
 	wp_register_script( 'jquery', get_template_directory_uri() . '/js/jquery-1.12.1.min.js', false, NULL, true );
-    wp_enqueue_script( 'jquery' );
+    wp_enqueue_script( 'jquery' );*/
 
 	wp_enqueue_script( 'jquery-ui-slider', array( 'jquery' ), "", true );
 	wp_enqueue_script( 'jquery-color', array( 'jquery' ), "", true );

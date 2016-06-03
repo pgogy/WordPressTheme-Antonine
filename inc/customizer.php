@@ -19,7 +19,13 @@ function antonine_customize_register_social_media( $wp_customize ){
 		'description' => 'Upload a logo',
 	) );
 
-	$wp_customize->add_setting( 'sm_logo' );
+	$wp_customize->add_setting( 
+		'sm_logo',
+		array(
+			'default' => 'on',
+			'sanitize_callback' => 'antonine_sanitize_file',
+		)
+	);
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'sm_logo', array(
 		'label'    => __( 'Logo', 'antonine' ),
