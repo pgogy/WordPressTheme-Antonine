@@ -49,7 +49,7 @@ function antonine_article_align(){
 				parent_width = jQuery(value).parent().width();
 				height = jQuery(value).height();
 				parent_height = jQuery(value).parent().height();
-				
+
 				leftpx = (parent_width - width)/2;
 				toppx = (parent_height - height)/2;
 				
@@ -67,10 +67,10 @@ function antonine_article_align(){
 				parent_width = jQuery(value).parent().width();
 				height = jQuery(value).height();
 				parent_height = jQuery(value).parent().height();
-				
+
 				leftpx = (parent_width - width)/2;
 				toppx = ((parent_height - height)/2);
-				
+
 				jQuery(value)
 					.css("position", "relative")
 					.css("top", toppx + "px")
