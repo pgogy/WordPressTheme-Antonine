@@ -293,6 +293,7 @@ div#previewHolderContent{
 }
 
 .home article,
+.search article,
 .archive article{
 	left: -50000px;
 	display: table;
