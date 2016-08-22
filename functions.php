@@ -426,8 +426,7 @@ function antonine_custom_css() {
 		.links .linkprevious,
 		.links .linknext,
 		.single .links,
-		#gradient,
-		.page{
+		#gradient{
 			background-color: <?PHP echo get_theme_mod("site_single_post_background_colour"); ?>;
 		}
 
