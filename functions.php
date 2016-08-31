@@ -72,7 +72,7 @@ add_action( 'widgets_init', 'antonine_widgets_init' );
   
 function antonine_scripts() {
 
-	if(SUBDOMAIN_INSTALL){
+	if(defined("SUBDOMAIN_INSTALL")){
 		$ajax_base = site_url();
 	}else{
 		$ajax_base = network_site_url();
