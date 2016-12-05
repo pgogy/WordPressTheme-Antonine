@@ -3,8 +3,8 @@ scrolling = false;
 jQuery(document).ready( function(){
 	jQuery(window).scroll(function (event) {
 	
-			var scrollTop     = jQuery(window).scrollTop(),
-			elementOffset = jQuery('#scroll_bottom').offset().top,
+			var scrollTop     = jQuery(window).scrollTop();
+			elementOffset = jQuery('#scroll_bottom').offset().top;
 			distance      = (elementOffset - scrollTop);
 			
 			if(distance <= (jQuery(window).height() + 10)){
@@ -54,6 +54,8 @@ jQuery(document).ready( function(){
 										);
 										
 									antonine_menu_slide(items);
+
+									
 									
 								}else{
 									html = jQuery("#main")
