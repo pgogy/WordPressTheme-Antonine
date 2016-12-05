@@ -6,14 +6,21 @@ jQuery(document).ready( function(){
 			var scrollTop     = jQuery(window).scrollTop();
 			elementOffset = jQuery('#scroll_bottom').offset().top;
 			distance      = (elementOffset - scrollTop);
-			
-			if(distance <= (jQuery(window).height() + 10)){
+						
+			console.log("antonine scroll position " + distance + " " + (jQuery(window).height() + 50));
+
+			if(distance <= (jQuery(window).height() + 50)){
+
+				console.log("antonine scrolling possible");
 			
 				scroll_on = jQuery('#scroll_bottom').attr("scroll");
+				
 				if(scroll_on=="on"){
 				
 					if(!scrolling){
 				
+						console.log("antonine scrolling request sent");
+	
 						scrolling = true;
 					
 						var data = {
@@ -54,8 +61,7 @@ jQuery(document).ready( function(){
 										);
 										
 									antonine_menu_slide(items);
-
-									
+	
 									
 								}else{
 									html = jQuery("#main")
@@ -65,6 +71,8 @@ jQuery(document).ready( function(){
 										
 									antonine_preview_link();	
 								}
+
+								console.log("antonine scroll complete");
 								
 							}
 						);
