@@ -1180,3 +1180,7 @@ section.error-404 header.page-header{
 footer#colophon{
 	height: 100px;
 }
+
+div.content-holder div{
+	word-break: break-word;
+}
